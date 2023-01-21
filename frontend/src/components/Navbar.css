@@ -1,0 +1,19 @@
+.navigation, .navigation a{
+    background-color: #7FBB9B;
+    height: fit-content;
+    color: white;
+    display: flex;
+    align-items:center;
+}
+
+.logo{
+    margin-left: 1em;
+    flex-grow: 6;
+}
+
+.menu{
+    margin-top: 8px;
+    margin-right: 2em;
+    flex-grow: 1;
+    border-radius: 5px;
+}

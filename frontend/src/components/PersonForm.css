@@ -1,0 +1,15 @@
+.formContainer{
+    padding: 2em;
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.userImage, fieldset
+{ border: 2px solid lightsteelblue; border-radius: 5px; padding: 1em; margin: 0 0 2em 2em; }
+
+.formTemplate input{
+    margin: 0 1em 0 0;
+}
