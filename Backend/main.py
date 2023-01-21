@@ -1,73 +1,86 @@
-from __future__ import annotations
-from dataclasses import dataclass
-from typing import Any, Optional
-from typing import Iterable
-import math
+from typing import Any, List, Optional
+from firebase import firebase
+
+# Connection to Firebase database
+firebase = firebase.FirebaseApplication(
+    'https://test-fb7e3-default-rtdb.firebaseio.com/')
 
 
-@dataclass
-class _Node:
-    """A node of an individual in a family tree.
+# Creating a person class
 
-    Instance Attributes:
-        - item: The data stored in this node.
-        - next: The next node in the list, if any.
-    """
-    item: Any
-    next: Optional[_Node] = None
+class Person:
+    # Attributes of the Person
+    name: str
+    spouse: str
+    children: List[str]
+    siblings: List[str]
+    mother: str
+    father: str
 
-class TreeNode:
-    """A recurisve Tree of a family tree data structure.
+    # Initialization
+    def __init__(self, name: str, spouse: str, children: List[str],
+                 siblings: List[str],
+                 mother: str, father: str) -> None:
+        self.name = name
+        self.spouse = spouse
+        self.children = children
+        self.siblings = siblings
+        self.mother = mother
+        self.father = father
 
-    Representation Invariants:
-        - self._root is not None or self._subtrees == []
-    """
-    # Private Instance Attributes:
-    #   - _root:
-    #       The item stored at this tree's root, or None if the tree is empty.
-    #   - _subtrees:
-    #       The list of subtrees of this tree. This attribute is empty when
-    #       self._root is None (representing an empty tree). However, this attribute
-    #       may be empty when self._root is not None, which represents a tree consisting
-    #       of just one item.
-    _root: Optional[Any]
-    _subtrees: list[TreeNode]
+## Method to post to the Firebase Database
+# p = Person("Mike Smith", "", [], [], "Susan Smith", "John Smith")
+# data = {
+#     'Name': p.name,
+#     'Mom': p.mother,
+#     'Dad': p.father
+# }
+# post_result = firebase.post('https://test-fb7e3-default-rtdb.firebaseio.com
+# /Family', data) print(post_result)
 
-    def __init__(self, data):
-        """Initialize a new Tree with the given data.
+## Method to get data from the Firebase Database
+# get_result = firebase.get('/Family/-NMINl9E110r_XZUqVSk', 'Mom')
+from typing import Any, List, Optional
+from firebase import firebase
 
-        If data is None, the tree is empty.
-
-        Preconditions:
-            - data is not none
-        """
-        self.data = data
-        self.children = []
-        self.parent = None
-
-    def add_child(self, child):
-        child.parent = self
-        self.children.append(child)
-
-    def build_family_tree(self):
-        root = TreeNode("Child")
-
-        parents = TreeNode("Parents")
-
-        grandparents = TreeNode("Grandparents")
-
-        siblings = TreeNode("Siblings")
-
-        relatives = TreeNode("relatives")
-
-        root.add_child(parents)
-        root.add_child(grandparents)
-        root.add_child(siblings)
-        root.add_child(relatives)
-
-        return root
+# Connection to Firebase database
+firebase = firebase.FirebaseApplication(
+    'https://test-fb7e3-default-rtdb.firebaseio.com/')
 
 
-if __name__ == '__main__':
-    root = build_family_tree()
-    pass
+# Creating a person class
+
+class Person:
+    # Attributes of the Person
+    name: str
+    spouse: str
+    children: List[str]
+    siblings: List[str]
+    mother: str
+    father: str
+
+    # Initialization
+    def __init__(self, name: str, spouse: str, children: List[str],
+                 siblings: List[str],
+                 mother: str, father: str) -> None:
+        self.name = name
+        self.spouse = spouse
+        self.children = children
+        self.siblings = siblings
+        self.mother = mother
+        self.father = father
+
+## Method to post to the Firebase Database
+# p = Person("Mike Smith", "", [], [], "Susan Smith", "John Smith")
+# data = {
+#     'Name': p.name,
+#     'Mom': p.mother,
+#     'Dad': p.father
+# }
+# post_result = firebase.post('https://test-fb7e3-default-rtdb.firebaseio.com
+# /Family', data) print(post_result)
+
+# Method to get data from the Firebase Database
+get_result = firebase.get('/Family/-NMINl9E110r_XZUqVSk', 'Mom')
+print(get_result)
+
