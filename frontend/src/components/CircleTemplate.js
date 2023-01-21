@@ -6,7 +6,7 @@ const Canvas = props => {
 
 function CircleTemplate() {
   return (
-   
+
   );
 }
 
