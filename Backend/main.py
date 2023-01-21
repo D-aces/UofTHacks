@@ -53,23 +53,19 @@ class TreeNode:
         root = TreeNode("Child")
 
         parents = TreeNode("Parents")
-        
+
         grandparents = TreeNode("Grandparents")
-        
+
         siblings = TreeNode("Siblings")
-        
+
         relatives = TreeNode("relatives")
 
         root.add_child(parents)
         root.add_child(grandparents)
         root.add_child(siblings)
         root.add_child(relatives)
-        
+
         return root
-
-
-def build_family_tree():
-    pass
 
 
 if __name__ == '__main__':
