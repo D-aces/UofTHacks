@@ -6,8 +6,8 @@
     margin: 0 0 1rem 1rem;
 }
 
-.formContainer{width: 25em;}
-.imageContainer{width: fit-content; align-items: center; background-color: white;}
+.formContainer{width: 25em; background-color:azure;}
+.imageContainer{width: fit-content; align-items: center; background-color: gainsboro;}
 
 
 .userImage{flex-basis: 20%; text-align: center;}
