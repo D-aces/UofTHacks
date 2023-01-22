@@ -17,6 +17,10 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <button className='submit-btn'>
+        <p>Generate Family Tree</p>
+      </button>
+      <h1>Add your family!</h1>
       <div className='mainPage'>
       {personForm}
       <PlusIcon onClick={renderNewForm} />

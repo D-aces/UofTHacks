@@ -4,24 +4,26 @@ import './PersonForm.css'
 import { useState, useRef } from 'react';
 
 function PersonForm() {
-  const [personRelation, setRelation] = useState('you')
+  const [person, setPerson] = useState('')
   const renderCount = useRef(0)
 
   useEffect (() => {
   renderCount.current = renderCount.current+1
 })
 
+
+
   return (
     <div className='formContainer'>
       <div className='userImage'>
         <FaceIcon style={{ fill: "black", fontSize: 150 }}></FaceIcon>
-        <h4>This is {personRelation}!</h4>
+        <h4> {person ? 'This is ' + person : '???'}</h4>
       </div>
       <form className='htmlFormTemplate'>
         <fieldset>
           <div className='inputField'>
             <label htmlFor="firstName">First Name </label>
-            <input type="text" id="firstName"></input>
+            <input type="text" id="firstName" value={person} onChange={e => setPerson(e.target.value)}></input>
           </div>
           <div className='inputField'>
             <label htmlFor="lastName">Last Name </label>

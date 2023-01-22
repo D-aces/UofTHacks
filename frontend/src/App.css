@@ -4,3 +4,24 @@
     flex-wrap: wrap;
 }
 
+h1 { margin: 1em;}
+
+.submit-btn{
+    background-color: #7FBB9B;
+    color: white;
+    border: 2px white solid;
+    padding: 8px;
+    margin: 2em;
+    width: 6.75em;
+    border-radius: 50%;
+    font-weight: bold;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.submit-btn:hover{
+    background-color: white;
+    border: 2px #7FBB9B solid;
+    color: #7FBB9B;
+}
