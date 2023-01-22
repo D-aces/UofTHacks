@@ -93,4 +93,5 @@ if __name__ == '__main__':
     mom.set_siblings(sis)
     mom.set_spouse(dad)
     print(mom.siblings[0].get_name())
+    print(get_result())
 
