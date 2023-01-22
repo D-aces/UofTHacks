@@ -91,22 +91,23 @@ def get_result() -> dict:
 
 
 if __name__ == '__main__':
-    # Setting up the people
-    me = Person("Tiana", "King")
-    kid = Person("Tamara", "King")
-    kid2 = Person("Tia", "King")
-    husband = Person("Jeff", "King")
-
-    # Converting the people into dictionary
-    d1 = create_data_form(me)
-    d2 = create_data_form(kid)
-    d4 = create_data_form(kid2)
-    d3 = create_data_form(husband)
-
-    # Inputting them into database
-    post_result(me, d1)
-    add_spouse_db(me.id, d3)
-    add_children_db(me.id, d2)
-    add_children_db(me.id, d4)
+    # # Setting up the people
+    # me = Person("Tiana", "King")
+    # kid = Person("Tamara", "King")
+    # kid2 = Person("Tia", "King")
+    # husband = Person("Jeff", "King")
+    #
+    # # Converting the people into dictionary
+    # d1 = create_data_form(me)
+    # d2 = create_data_form(kid)
+    # d4 = create_data_form(kid2)
+    # d3 = create_data_form(husband)
+    #
+    # # Inputting them into database
+    # post_result(me, d1)
+    # add_spouse_db(me.id, d3)
+    # add_children_db(me.id, d2)
+    # add_children_db(me.id, d4)
+    print(get_result())
 
 
